@@ -1,0 +1,494 @@
+{% load static %}
+
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>GrowMore - Home </title>
+	<meta name="description" content="An Agricultural portal">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="manifest" href="site.html">
+	<link rel="apple-touch-icon" href="icon.html">
+	<!-- Place favicon.ico in the root directory -->
+
+	<!-- bootstrap v4.0.0 -->
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<!-- fontawesome-icons css -->
+	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+	<!-- themify-icons css -->
+	<link rel="stylesheet" href="{% static 'css/themify-icons.css' %}">
+	<!-- elegant css -->
+	<link rel="stylesheet" href="{% static 'css/elegant.css' %}">
+	<!-- meanmenu css -->
+	<link rel="stylesheet" href="{% static 'css/meanmenu.min.css' %}">
+	<!-- animate css -->
+	<link rel="stylesheet" href="{% static 'css/animate.css' %}">
+	<!-- venobox css -->
+	<link rel="stylesheet" href="{% static 'css/venobox.css' %}">
+	<!-- jquery-ui.min css -->
+	<link rel="stylesheet" href="{% static 'css/jquery-ui.min.css' %}">
+	<!-- slick css -->
+	<link rel="stylesheet" href="{% static 'css/slick.css' %}">
+	<!-- slick-theme css -->
+	<link rel="stylesheet" href="{% static 'css/slick-theme.css' %}">
+	<!-- helper css -->
+	<link rel="stylesheet" href="{% static 'css/helper.css' %}">
+	<!-- style css -->
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<!-- responsive css -->
+	<link rel="stylesheet" href="{% static 'css/responsive.css' %}">
+
+
+	<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit">
+		window.watsonAssistantChatOptions = {
+			integrationID: "7cee22ef-ef06-4aab-9ca6-6202f2ab1d62", // The ID of this integration.
+			region: "eu-gb", // The region your integration is hosted in.
+			serviceInstanceID: "a872e461-2820-42ca-9ae9-904e227f7a30", // The ID of your service instance.
+			onLoad: function(instance) { 
+				instance.updateCSSVariables({
+        		'BASE-font-family': '"Roboto Slab", cursive,"Bellota", serif',
+       			'$active-primary': '#795548',
+        		'$focus': '#00FF99',
+        		'$hover-primary': '#795548',
+        		'$interactive-01': '#8bc052'
+      			});
+				instance.render(); }
+		  };
+		setTimeout(function(){
+		  const t=document.createElement('script');
+		  t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js"
+		  document.head.appendChild(t);
+		});
+
+		function googleTranslateElementInit() {
+		  new google.translate.TranslateElement({pageLanguage: 'en'}, 'google_translate_element');
+		}
+		
+	</script>
+		
+
+</head>
+
+<body>
+  	<!--header-area start-->
+  	<header class="header-area">
+		<!--header-bottom-->
+		<div id="sticker" class="header-bottom">
+			<div class="container-fluid">
+				<div class="row align-items-center">
+					<div class="col-sm-2">
+						<div class="logo">
+							<a href="/"><img src="{% static 'images/logowbg.png' %}" alt="logo"></a>
+						</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="mainmenu text-center">
+							<nav>
+								<ul>
+									<li><a href="/">Home</a></li>
+									<li><a href="/crop_rec">RECOMMEND</a></li>
+									<li><a href="#">Insights</a>
+										<ul class="submenu">
+											<li><a href="/about">About Us</a></li>
+											<li><a href="/coming_soon">Coming Soon</a></li> 
+										</ul>
+									</li>
+									<li><a href="/faq">FAQs</a></li>
+									<li><a href="/blog">Blog</a>
+									</li>
+									<li><a href="/plants">Plants</a></li>
+									<li><a href="/contact">Contact Us</a></li>
+									<li><a href="/login">LOGIN/SIGNUP</a></li>									
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+  	</header>
+  	<!--header-area end-->
+	
+	<!--slider-area start-->
+	<div class="slider-area">
+		<div class="container-fluid">
+			<div class="slider-items arrow-none">
+				<div class="single-slide bg-1" style ="background-image: url('{% static "images/banners/4.jpg" %}')" >
+					<div class="row height-800 align-items-center">
+						<div class="col-lg-9 offset-lg-3 col-sm-12">
+							<div class="banner-text style-3 text-black text-left mt-minus-58">
+								<h2>CROP <br/> Recommendation</h2>
+								<p class="mt-35">It provides valuable insights on which crops to grow<br/>
+									depending upon the environmental conditions like rainfall, <br/>
+									temperature, soil fertility among the others.</p>
+								<p style="color: #8bc052;"><em><b>हमारी पसंद, फसल आपकी</b></em></p>
+								<a href="/crop_rec" class="btn-common mt-40"><b>अपनी फसल चुनें</b></a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="single-slide bg-2 height-800" style ="background-image: url('{% static "images/banners/5.jpg" %}')" >
+					<div class="row height-800 align-items-center">
+						<div class="col-sm-12">
+							<div class="banner-text style-3 text-white text-center mt-minus-58">
+								<h2>Your Home <br/> With a Beautiful Garden</h2>
+								<p class="mt-35">This blogs covers all the tips and tricks of gardening whether its the <br/> Balcony or your WFH setup with just minimal efforts.<br/> Read this and other such blogs by clicking on the button below.</p>
+								<a href="blog.html" class="btn-common mt-40">Read More  &#x279E;</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--slider-area end-->
+	
+	<!--blog-area start-->
+	<div class="blog-area mt-62 sm-mt-58">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-8 offset-sm-2">
+					<div class="section-title style-2">
+						<h2><b>New Blogs & Tips</b></h2>
+					</div>
+				</div>
+			</div>
+			<div class="row mt-42">
+				<div class="col-lg-6 col-sm-12 single-blog style-3 style-4 p-0">
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="blog-thumb">
+								<a href="2blog-details.html"><img src="{% static 'images/blog/10.jpg' %}" alt="blog-image"></a>
+							</div>
+						</div>
+						<div class="col-sm-6 p-0">
+							<div class="blog-desc text-left">
+								<h3><a href="2blog-details.html">Reach for the Treetops!</a></h3>
+								<p>Want to learn how to start a profitable Flower Business? Jump over to our blog
+									which is begineer's guide and starts right from the uproots on how to ...
+								</p>
+								<a href="2blog-details.html" class="btn-common">Read More</a>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-6 col-sm-12 single-blog style-3 style-4 sm-mb-0 p-0">
+					<div class="row">
+						<div class="col-sm-6">
+							<div class="blog-thumb">
+								<a href="1blog-details.html"><img src="{% static 'images/blog/11.jpg' %}" alt="blog-image"></a>
+							</div>
+						</div>
+						<div class="col-sm-6 p-0">
+							<div class="blog-desc text-left">
+								<h3><a href="1blog-details.html">Tech in Agriculture!</a></h3>
+								<p>We say technology is everywhere and its rightly justified for agriculture as well.
+									Head over to our blog where you could find out about how agriculture is ...
+								</p>
+								<a href="1blog-details.html" class="btn-common">Read More</a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--blog-area end-->
+	<hr style="border-style: groove;">
+	<!--cta-area start-->
+	
+	<div class="cta-area bg-2 mt-75" style ="background-image: url('images/bg/cta.jpg') ">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 col-sm-12">
+					<div class="cta-text style-2 text-white text-center">
+						<h2>Weather Forecasting</h2>
+						<p>With the help of Weather forecasting you would be able to have well-informed decisions for your agricultural practises.</p>
+						<a href="coming-soon.html" class="btn-common mt-40">Launching soon</a>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--cta-area end-->
+	<hr style="border-style: groove:">
+	<!--testimonial-area start-->
+	<div class="testimonial-area no-bg mt-60">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-10 offset-lg-1 col-sm-12">
+					<div class="section-title style-2 text-center">
+						<h2><b>Testimonials</b></h2>
+					</div>
+					<div class="testimonial-items carousel-one arrow-none">
+						<div class="single-testimonial">
+							<img src="{% static 'images/testimonial/1.jpg' %}" alt="user pic" />
+							<p>I wanted to mention that these days, when the opposite of good customer and tech 
+								support <br/> tends to be the norm, it is always great having a team like you guys at 
+								GrowMore! So, be sure <br/> that I will always spread the word about how good your 
+								Recommendation Model is and the extraordinary level of support that you provide any 
+								time there is any need for it.
+							</p>
+							<h4>Ramji Patel</h4>
+							<small>A Rural Farmer</small>
+						</div>
+						<div class="single-testimonial">
+							<img src="{% static 'images/testimonial/1.jpg' %}" alt="user pic" />
+							<p>I wanted to mention that these days, when the opposite of good customer and tech 
+								support <br/> tends to be the norm, it’s always great having a team like you guys at 
+								GrowMore! So, be sure <br/> that I’ll always spread the word about how good your 
+								Recommendation Model is and the extraordinary level of support that you provide any 
+								time there is any need for it.
+							</p>
+							<h4>Gopaldas Gada</h4>
+							<small>A Rural Farmer</small>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--testimonial-area end-->
+	
+	<!--brands-area start-->
+	<div class="brand-area mt-110">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="brand-items">
+						<div class="brand-item">
+							<a href="#">
+								<img class="brand-static" src="{% static 'images/brands/1.jpg' %}" alt="" />
+								<img class="brand-dynamic" src="  {% static 'images/brands/1-hover.png' %}" alt="" />
+							</a>
+						</div>
+						<div class="brand-item">
+							<a href="#">
+								<img class="brand-static" src="  {% static 'images/brands/2.png' %}" alt="" />
+								<img class="brand-dynamic" src="  {% static 'images/brands/2-hover.png' %}" alt="" />
+							</a>
+						</div>
+						<div class="brand-item">
+							<a href="#">
+								<img class="brand-static" src="  {% static 'images/brands/3.png' %}" alt="" />
+								<img class="brand-dynamic" src="  {% static 'images/brands/3-hover.png' %}" alt="" />
+							</a>
+						</div>
+						<div class="brand-item">
+							<a href="#">
+								<img class="brand-static" src="    {% static 'images/brands/4.jpg'%}" alt="" />
+								<img class="brand-dynamic" src="   {% static 'images/brands/4-hover.png'%}" alt="" />
+							</a>
+						</div>
+						<div class="brand-item">
+							<a href="#">
+								<img class="brand-static" src="    {% static 'images/brands/5.png'%}" alt="" />
+								<img class="brand-dynamic" src="    {% static 'images/brands/5-hover.png'%}" alt="" />
+							</a>
+						</div>
+						<div class="brand-item">
+							<a href="#">
+								<img class="brand-static" src="  {% static 'images/brands/6.png'%}" alt="" />
+								<img class="brand-dynamic" src="  {% static 'images/brands/6-hover.png'%}" alt="" />
+							</a>
+						</div>
+						<!--<div class="brand-item">
+							<a href="#">
+								<img class="brand-static" src="static/images/brands/7.png" alt="" />
+								<img class="brand-dynamic" src="static/images/brands/7-hover.png" alt="" />
+							</a>
+						</div>
+						<div class="brand-item">
+							<a href="#">
+								<img class="brand-static" src="static/images/brands/8.png" alt="" />
+								<img class="brand-dynamic" src="static/images/brands/8-hover.png" alt="" />
+							</a>
+						</div>-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--brands-area end-->
+	
+	<!--contact-box-area start-->
+	<div class="contact-box-area">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-md-6 col-sm-12">
+					<div class="single-contact-box">
+						<i class="fa fa-map-marker"></i>
+						<h4>Our Location</h4>
+						<p>303 Ganesh Meridian, Nr. Gujarat High Court,A'BAD-380054, Gujarat, India .</p>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-sm-12">
+					<div class="single-contact-box">
+						<i class="fa fa-phone"></i>
+						<h4>Phone Number</h4>
+						<p>(+91) 980 765 4321</p>
+						<p>(+91) 980 765 4322</p>
+					</div>
+				</div>
+				<div class="col-lg-4 d-lg-block col-md-6 d-md-none col-sm-12">
+					<div class="single-contact-box">
+						<i class="fa fa-envelope"></i>
+						<h4>Email Contact</h4>
+						<p>growmoree101@gmail.com</p>
+						<p>jeetshah18@gnu.ac.in</p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--contact-box-area end-->
+	
+	<!--instagram-area start-->
+	<div class="instagram-area">
+		<div class="container-fluid p-0">
+			<div class="instragram-photos">
+				<div class="instragram-photo">
+					<a href="#"><img src="{% static 'images/instagram/7.jpg'%}" alt="" /></a>
+					<h5><a href="#"><i class="fa fa-instagram"></i>Follow Us</a></h5>
+				</div>
+				<div class="instragram-photo">
+					<a href="#"><img src="   {% static 'images/instagram/8.jpg'%}" alt="" /></a>
+					<h5><a href="#"><i class="fa fa-instagram"></i>Follow Us</a></h5>
+				</div>
+				<div class="instragram-photo">
+					<a href="#"><img src="   {% static 'images/instagram/9.jpg'%}" alt="" /></a>
+					<h5><a href="#"><i class="fa fa-instagram"></i>Follow Us</a></h5>
+				</div>
+				<div class="instragram-photo">
+					<a href="#"><img src="   {% static 'images/instagram/10.jpg'%}" alt="" /></a>
+					<h5><a href="#"><i class="fa fa-instagram"></i>Follow Us</a></h5>
+				</div>
+				<div class="instragram-photo">
+					<a href="#"><img src="  {% static ' images/instagram/11.jpg'%}" alt="" /></a>
+					<h5><a href="#"><i class="fa fa-instagram"></i>Follow Us</a></h5>
+				</div>
+				<div class="instragram-photo">
+					<a href="#"><img src="  {% static 'images/instagram/12.jpg'%}" alt="" /></a>
+					<h5><a href="#"><i class="fa fa-instagram"></i>Follow Us</a></h5>
+				</div>
+				<div class="instragram-photo">
+					<a href="#"><img src="  {% static 'images/instagram/13.jpg'%}" alt="" /></a>
+					<a href="#" class="insta-video"><i class="ti-control-play"></i></a>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--instagram-area end-->
+	
+	<!--footer-area start-->
+	<footer class="footer-area">
+		<!--footer-top-->
+		<div class="footer-widgets">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-sm-6">
+						<div class="footer-widget style-2">
+							<h4>GrowMore</h4>
+							<div class="about-widget">
+								<p>It is a portal for farmers where they can take informed decisions on which crop 
+									to cultivate depending on parameters and have awareness about various schemes of
+									 government and in general improves their cultivation methods.
+								</p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-6">
+						<div class="footer-widget style-2">
+							<h4>Contact Info</h4>
+							<div class="contact-info style-3">
+								<ul>
+									<li><i class="fa fa-home"></i>303 Ganesh Meridian,A'BAD, India</li>
+									<li><i class="fa fa-phone"></i>(+91) 980 765 4321</li>
+									<li><i class="fa fa-envelope"></i>growmoree101@gmail.com</li>
+									<li><i class="fa fa-clock-o"></i>24X7X365</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-6">
+						<div class="footer-widget style-2">
+							<h4>Navigation</h4>
+							<div class="fooer-menu">
+								<ul class="mr-40"><b>
+									<li><a href="/crop_rec">Crop Recommendation</a></li>
+									<li><a href="/coming_soon">Insights > Coming Soon</a></li>
+									<li><a href="/blog">Blogs</a></li>
+									<li><a href="/faq">FAQs</a></li>
+									<li><a href="/plants">Plants</a></li></b>
+								</ul>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-sm-6">
+						<div class="footer-widget style-2">
+							<h4>Stay Updated</h4>
+							<p>We'll directly send Blogs to your mail.</p>
+							<div class="subscribe-form style-3 fix">
+								<input type="email" placeholder="Your Email" />
+								<button><i class="fa fa-envelope"></i></button>
+							</div>
+							<div class="social-icons style-3 mt-35">
+								<p>Follow us on</p>
+								<a href="https://www.facebook.com/growmoree101"><i class="fa fa-facebook"></i></a>
+								<a href="https://app.slack.com/client/T02VBAH9UQ7/D0305AECSES"><i class="fa fa-slack"></i></a>
+								<a href="https://www.instagram.com/growmoree101/"><i class="fa fa-instagram"></i></a>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!--footer copyright-->
+		<div class="footer-copyright">
+			<div class="container">
+				<div class="row">
+					<div class="col-sm-12">
+						<p><a href="https://github.com/Jeetshah18/GrowMore">
+							<em><b> &copy;</b> All copyrights reserved by G29-GrowMore team</em></a></p>
+					</div>
+				</div>
+			</div>
+		</div>
+	</footer>
+	<!--footer-area end-->
+  
+		<!-- modernizr js -->
+<script src="{% static 'js/vendor/modernizr-3.6.0.min.js' %}"></script>
+	<!-- jquery-1.12.0 version -->
+	<script src="{% static 'js/vendor/jquery-1.12.0.min.js' %}"></script>
+	<!-- bootstra.min js -->
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<!-- meanmenu js -->
+	<script src="{% static 'js/jquery.meanmenu.min.js' %}"></script>
+	<!-- easing js -->
+	<script src="{% static 'js/jquery.easing.min.js' %}"></script>
+	<!---venobox-js-->
+	<script src="{% static 'js/venobox.min.js' %}"></script>
+	<!---slick-js-->
+	<script src="{% static 'js/slick.min.js' %}"></script>
+	<!---waypoints-js-->
+	<script src="{% static 'js/waypoints.js' %}"></script>
+	<!---counterup-js-->
+	<script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+	<!---isotop-js-->
+	<script src="{% static 'js/isotope.pkgd.min.j' %}"></script>
+	<!-- jquery-ui js -->
+	<script src="{% static 'js/jquery-ui.min.js' %}"></script>
+	<!-- jquery.countdown js -->
+	<script src="{% static 'js/jquery.countdown.min.js' %}"></script>
+	<!-- plugins js -->
+	<script src="{% static 'js/plugins.js' %}"></script>
+	<!-- main js -->
+	<script src="{% static 'js/main.js' %}"></script>
+  
+</body>
+
+</html>

@@ -1,0 +1,363 @@
+{% load static %} 
+
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>GrowMore - Blog</title>
+	<meta name="description" content="">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="manifest" href="/site">
+	<link rel="apple-touch-icon" href="/icon">
+	<!-- Place favicon.ico in the root directory -->
+
+
+	<!-- bootstrap v4.0.0 -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/bootstrap.min.css">
+	<!-- fontawesome-icons css -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/font-awesome.min.css">
+	<!-- themify-icons css -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/themify-icons.css">
+	<!-- elegant css -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/elegant.css">
+	<!-- meanmenu css -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/meanmenu.min.css">
+	<!-- animate css -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/animate.css">
+	<!-- venobox css -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/venobox.css">
+	<!-- jquery-ui.min css -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/jquery-ui.min.css">
+	<!-- slick css -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/slick.css">
+	<!-- slick-theme css -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/slick-theme.css">
+	<!-- helper css -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/helper.css">
+	<!-- style css -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/style.css">
+	<!-- responsive css -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/responsive.css">
+
+</head>
+
+<body>
+  <!--[if lte IE 9]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  	<!--header-area start-->
+  	<header class="header-area">
+		<!--header-top-->
+	  	<div class="header-top d-none d-sm-block">
+	  		<div class="container">
+	  			<div class="row align-items-center">
+	  				<div class="col-sm-9">
+	  					<div class="contact-info">
+	  						<ul>
+	  							<li><i class="fa fa-phone"></i>(+91) 9261 435 768 <span>|</span></li>
+	  							<li><i class="fa fa-home"></i>303 Ganesh Meridian,A'BAD  <span>|</span></li>
+	  							<li><i class="fa fa-time"></i>Monday - Saturday: 7.AM - 5.PM</li>
+	  						</ul>
+	  					</div>
+	  				</div>
+	  				<div class="col-sm-3">
+						<div class="social-icons pull-right">
+							<a href="#"><i class="fa fa-facebook"></i></a>
+							<a href="#"><i class="fa fa-twitter"></i></a>
+							<a href="#"><i class="fa fa-instagram"></i></a>
+						</div>
+					</div>
+					</div>
+	  			</div>
+	  		</div>
+	  	</div>
+		<!--header-bottom-->
+		<div id="sticker" class="header-bottom">
+			<div class="container-fluid">
+				<div class="row align-items-center">
+					<div class="col-sm-2">
+						<div class="logo">
+							<a href="/"><img src="{% static 'images/logowbg.png' %}" alt="logo"></a>
+						</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="mainmenu text-center">
+							<nav>
+								<ul>
+									<li><a href="/">Home</a></li>
+									<li><a href="/crop_rec">RECOMMEND</a></li>
+									<li><a href="#">Insights</a>
+										<ul class="submenu">
+											<li><a href="/about">About Us</a></li>
+											<li><a href="/coming_soon">Coming Soon</a></li> 
+										</ul>
+									</li>
+									<li><a href="/faq">FAQs</a></li>
+									<li><a href="/blog">Blog</a>
+									</li>
+									<li><a href="/plants">Plants</a></li>
+									<li><a href="/contact">Contact Us</a></li>
+									<li><a href="/login">LOGIN/SIGNUP</a></li>									
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+  	</header>
+  	<!--header-area end-->
+	
+	<!--page-banner-area start-->
+	<div class="page-banner-area bg-8"  style ="background-image: url('{% static "images/banners/page-banner-7.jpg" %}')">
+		<div class="container">
+			<div class="row align-items-center height-400" >
+				<div class="col-lg-12">
+					<div class="page-banner-text text-center text-white">
+						<h2>Blog</h2>
+						<ul class="site-breadcrumb">
+							<li><a href="#">Home</a> <span>></span></li>
+							<li>Blog</li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--banner-area end-->
+	
+	<!--blog-area start-->
+	<div class="blog-area mt-100 sm-mt-80">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-4 col-md-6 col-sm-12">
+					<div class="single-blog">
+						<div class="blog-thumb">
+							<a href="#"><img src="{% static 'images/blog/1.jpg' %}" alt="blog-image"></a>
+						</div>
+						<div class="blog-desc">
+							<h3><a href="#">How Indian Agriculture Is Being Revolutionized By Fresh Wave of Technical Innovation & New-Age Businesses</a></h3>
+							<p>The agriculture industry in India is on the verge of a breakthrough. </p>
+							<a href="/blog_1_details" class="readmore">Read More</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-sm-12">
+					<div class="single-blog">
+						<div class="blog-thumb">
+							<a href="#"><img src="static/images/blog/2.jpg" alt="blog-image"></a>
+						</div>
+						<div class="blog-desc">
+							<h3><a href="#">How to Start a Profitable Flower Business?</a></h3>
+							<p>Entrepreneurs are profiting from the Internet and digitalization. </p>
+							<a href="/blog_2_details" class="readmore">Read More</a>
+						</div>
+					</div>
+				</div>
+				<div class="col-lg-4 col-md-6 col-sm-12 sm-mt-35">
+					<div class="single-blog">
+						<div class="blog-thumb">
+							<a href="#"><img src="static/images/blog/3.jpg" alt="blog-image"></a>
+						</div>
+						<div class="blog-desc">
+							<h3><a href="#">How to Start a Profitable Frozen Food Business in India? A Complete Guide</a></h3>
+							<p>Starting a food business in India will always be a profitable one</p>
+							<a href="/blog_3_details" class="readmore">Read More</a>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--blog pagination-->
+			<!--div class="row">
+				<div class="col-sm-12">
+					<div class="msk-pagination style-3 text-center mt-50 fix">
+						<ul>
+							<li><a href="#">Prev</a></li>
+							<li class="active"><a href="#">1</a></li>
+							<li><a href="#">2</a></li>
+							<li><a href="#">3</a></li>
+							<li><a href="#">Next</a></li>
+						</ul>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div-->
+	<!--blog-area end-->
+	
+	<!--brands-area start-->
+	<div class="brand-area mt-110">
+		<div class="container-fluid">
+			<div class="row">
+				<div class="col-sm-12">
+					<div class="brand-items">
+						<div class="brand-item">
+							<a href="#">
+								<img class="brand-static" src="{% static 'images/brands/1.jpg' %}" alt="" />
+								<img class="brand-dynamic" src="{% static 'images/brands/1-hover.png' %}" alt="" />
+							</a>
+						</div>
+						<div class="brand-item">
+							<a href="#">
+								<img class="brand-static" src="{% static 'images/brands/2.png' %}" alt="" />
+								<img class="brand-dynamic" src="{% static 'images/brands/2-hover.png' %}" alt="" />
+							</a>
+						</div>
+						<div class="brand-item">
+							<a href="#">
+								<img class="brand-static" src="{% static 'images/brands/3.png' %}" alt="" />
+								<img class="brand-dynamic" src="{% static 'images/brands/3-hover.png' %}" alt="" />
+							</a>
+						</div>
+						<div class="brand-item">
+							<a href="#">
+								<img class="brand-static" src="{% static 'images/brands/4.jpg' %}" alt="" />
+								<img class="brand-dynamic" src="{% static 'images/brands/4-hover.png' %}" alt="" />
+							</a>
+						</div>
+						<div class="brand-item">
+							<a href="#">
+								<img class="brand-static" src="{% static 'images/brands/5.png' %}" alt="" />
+								<img class="brand-dynamic" src="{% static 'images/brands/5-hover.png' %}" alt="" />
+							</a>
+						</div>
+						<div class="brand-item">
+							<a href="#">
+								<img class="brand-static" src="{% static 'images/brands/6.png' %}" alt="" />
+								<img class="brand-dynamic" src="{% static 'images/brands/6-hover.png' %}" alt="" />
+							</a>
+						</div>
+						<!--<div class="brand-item">
+							<a href="#">
+								<img class="brand-static" src="static/images/brands/7.png" alt="" />
+								<img class="brand-dynamic" src="static/images/brands/7-hover.png" alt="" />
+							</a>
+						</div>
+						<div class="brand-item">
+							<a href="#">
+								<img class="brand-static" src="static/images/brands/8.png" alt="" />
+								<img class="brand-dynamic" src="static/images/brands/8-hover.png" alt="" />
+							</a>
+						</div>-->
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!--brands-area end-->
+	
+	<!--footer-area start-->
+			<!--footer-area start-->
+		<footer class="footer-area">
+			<!--footer-top-->
+			<div class="footer-widgets">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-3 col-sm-6">
+							<div class="footer-widget style-2">
+								<h4>GrowMore</h4>
+								<div class="about-widget">
+									<p>It is a portal for farmers where they can take informed decisions on which crop 
+										to cultivate depending on parameters and have awareness about various schemes of
+										 government and in general improves their cultivation methods.
+									</p>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-sm-6">
+							<div class="footer-widget style-2">
+								<h4>Contact Info</h4>
+								<div class="contact-info style-3">
+									<ul>
+										<li><i class="fa fa-home"></i>303 Ganesh Meridian,A'BAD, India</li>
+										<li><i class="fa fa-phone"></i>(+91) 980 765 4321</li>
+										<li><i class="fa fa-envelope"></i>growmoree101@gmail.com</li>
+										<li><i class="fa fa-clock-o"></i>24X7X365</li>
+									</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-sm-6">
+							<div class="footer-widget style-2">
+								<h4>Navigation</h4>
+								<div class="fooer-menu">
+									<ul class="mr-40"><b>
+									<li><a href="/crop_rec">Crop Recommendation</a></li>
+									<li><a href="/coming_soon">Insights > Coming Soon</a></li>
+									<li><a href="/blog">Blogs</a></li>
+									<li><a href="/faq">FAQs</a></li>
+									<li><a href="/plants">Plants</a></li></b>
+								</ul>
+								</div>
+							</div>
+						</div>
+						<div class="col-lg-3 col-sm-6">
+							<div class="footer-widget style-2">
+								<h4>Stay Updated</h4>
+								<p>We'll directly send Blogs to your mail.</p>
+								<div class="subscribe-form style-3 fix">
+									<input type="email" placeholder="Your Email" />
+									<button><i class="fa fa-envelope"></i></button>
+								</div>
+								<div class="social-icons style-3 mt-35">
+									<p>Follow us on</p>
+									<a href="https://www.facebook.com/growmoree101"><i class="fa fa-facebook"></i></a>
+									<a href="https://app.slack.com/client/T02VBAH9UQ7/D0305AECSES"><i class="fa fa-slack"></i></a>
+									<a href="https://www.instagram.com/growmoree101/"><i class="fa fa-instagram"></i></a>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+			<!--footer copyright-->
+			<div class="footer-copyright">
+				<div class="container">
+					<div class="row">
+						<div class="col-sm-12">
+							<p><a href="https://github.com/Jeetshah18/GrowMore">
+								<em><b> &copy;</b> All copyrights reserved by G29-GrowMore team</em></a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</footer>
+		<!--footer-area end-->
+	<!--footer-area end-->
+   
+	<!-- modernizr js -->
+	<script src="{% static 'js/vendor/modernizr-3.6.0.min.js' %}"></script>
+	<!-- jquery-1.12.0 version -->
+	<script src="{% static 'js/vendor/jquery-1.12.0.min.js' %}"></script>
+	<!-- bootstra.min js -->
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<!-- meanmenu js -->
+	<script src="{% static 'js/jquery.meanmenu.min.js' %}"></script>
+	<!-- easing js -->
+	<script src="{% static 'js/jquery.easing.min.js' %}"></script>
+	<!---venobox-js-->
+	<script src="{% static 'js/venobox.min.js' %}"></script>
+	<!---slick-js-->
+	<script src="{% static 'js/slick.min.js' %}"></script>
+	<!---waypoints-js-->
+	<script src="{% static 'js/waypoints.js' %}"></script>
+	<!---counterup-js-->
+	<script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+	<!---isotop-js-->
+	<script src="{% static 'js/isotope.pkgd.min.j' %}"></script>
+	<!-- jquery-ui js -->
+	<script src="{% static 'js/jquery-ui.min.js' %}"></script>
+	<!-- jquery.countdown js -->
+	<script src="{% static 'js/jquery.countdown.min.js' %}"></script>
+	<!-- plugins js -->
+	<script src="{% static 'js/plugins.js' %}"></script>
+	<!-- main js -->
+	<script src="{% static 'js/main.js' %}"></script>
+  
+</body>
+
+</html>

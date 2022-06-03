@@ -1,0 +1,1238 @@
+{% load static %} 
+
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>GrowMore - Coming Soon</title>
+	<meta name="description" content="Coming soon...">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="manifest" href="site.html">
+	<link rel="apple-touch-icon" href="icon.html">
+	<!-- Place favicon.ico in the root directory -->
+<!-- bootstrap v4.0.0 -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/bootstrap.min.css">
+	<!-- fontawesome-icons css -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/font-awesome.min.css">
+	<!-- themify-icons css -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/themify-icons.css">
+	<!-- elegant css -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/elegant.css">
+	<!-- meanmenu css -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/meanmenu.min.css">
+	<!-- animate css -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/animate.css">
+	<!-- venobox css -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/venobox.css">
+	<!-- jquery-ui.min css -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/jquery-ui.min.css">
+	<!-- slick css -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/slick.css">
+	<!-- slick-theme css -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/slick-theme.css">
+	<!-- helper css -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/helper.css">
+	<!-- style css -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/style.css">
+	<!-- responsive css -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/responsive.css">
+
+
+	<script>
+		window.watsonAssistantChatOptions = {
+			integrationID: "7cee22ef-ef06-4aab-9ca6-6202f2ab1d62", // The ID of this integration.
+			region: "eu-gb", // The region your integration is hosted in.
+			serviceInstanceID: "a872e461-2820-42ca-9ae9-904e227f7a30", // The ID of your service instance.
+			onLoad: function(instance) { 
+				instance.updateCSSVariables({
+        		'BASE-font-family': '"Roboto Slab", cursive,"Bellota", serif',
+       			'$active-primary': '#795548',
+        		'$focus': '#00FF99',
+        		'$hover-primary': '#795548',
+        		'$interactive-01': '#8bc052'
+      			});
+				instance.render(); }
+		  };
+		setTimeout(function(){
+		  const t=document.createElement('script');
+		  t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js"
+		  document.head.appendChild(t);
+		});
+
+		*{
+    font-family: spartan;
+    font-size:large;
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+#flag, #icon, #weatherCurrent{
+    /*Just at first load*/
+    visibility: hidden;
+}
+
+.weatherDescription{
+    text-transform: capitalize;
+}
+
+.clickable{
+    cursor: pointer;
+}
+
+
+/* Input Section */
+.inputSection{
+        box-shadow: 0 0 1px 1px hsl(243, 100%, 69%);
+}
+.searchBar{
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 1px 1px hsl(243, 100%, 69%);
+    border-radius: 500px;
+    margin: 0.5em 1em 0.5em 1em;
+}
+.searchBar > *{
+    border: none;
+    outline: none;
+    padding: 0.5em;
+    height: 2em;
+}
+
+.inputField{
+    width: 80%;
+    border-radius: 500px 0px 0px 500px ;
+}
+.inputBtn{
+    width: 10%;
+    min-width: fit-content;
+
+    border-radius: 0px 500px 500px 0px ;
+
+    transition: all 1s;
+}
+.unitsBtn{
+    width: 10%;
+    min-width: fit-content;
+    border-radius: 0px;
+    transition: all 1s;
+}
+
+.metric{
+    background: rgb(182, 195, 255);
+    color: black;
+}
+.imperial{
+    background: rgb(36, 58, 121);
+    color: whitesmoke;
+}
+.imperial:hover{
+    box-shadow: inset 0 0 1px 1px whitesmoke;
+}
+.metric:hover{
+    box-shadow: inset 0 0 1px 1px rgb(36, 58, 121);
+}
+
+.suggestions{
+    position: absolute;
+    height: fit-content;
+    width: 75%;
+    left: 12.5%;
+    background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+
+    padding: 0.5em 1em 0.5em 1em;
+    margin-top: 0.1em;
+    border-radius: 10px;
+
+
+    transition: all 1s;
+}
+
+.hidden{
+    visibility: hidden;
+    opacity: 0;
+    transition: all 0.5s;
+}
+
+.suggestions li{
+    background-color: whitesmoke;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+    list-style: none;
+    padding: 0.5em;
+    
+    transition: all 0.5s;
+
+}
+
+.suggestions li:hover{
+    z-index: 1;
+    background-color: rgb(255, 255, 255);
+    align-self: center;
+    box-shadow: 0 0 5px 1px #10345e77;
+    transform: scale(1.2);
+}
+
+.suggestions li img{
+    height: 1.5em;
+    width: 2.25em;
+}
+
+.suggestions li div{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+
+/* Current Country Info */
+
+.currentCountryInfo{
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5em 1em;
+    justify-content: center;
+    padding: 0.5em 1em 0.5em 1em;
+}
+
+#flag{
+    height: 1em;
+}
+.location{
+    text-align: center;
+}
+.coordinates{
+    align-self: center;
+    text-align: center;
+}
+
+/* weather current */
+
+#weatherCurrent{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: max-content;
+}
+
+.currentMain{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    
+}
+
+#icon{
+    height: 2em;
+}
+
+.currentData{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    text-align: center;
+}
+.currentData > *{
+    padding: 0.5em;
+}
+
+/* Weather Forecast */
+
+.day0{grid-area: day0;}
+.day1{grid-area: day1;}
+.day2{grid-area: day2;}
+.day3{grid-area: day3;}
+.day4{grid-area: day4;}
+.day5{grid-area: day5;}
+.day6{grid-area: day6;}
+.day7{grid-area: day7;}
+
+.day{
+
+    position: absolute;
+    visibility: hidden;
+
+    height: 100%;
+    width: 100%;
+    border-radius: 5em;
+
+    justify-self: center;
+    align-self: center;
+
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    background: white;
+
+    border: gray 1px solid;
+    box-shadow: 0 0 2px 0px gray;
+    
+}
+
+.expand{
+    visibility: visible;
+    animation: expand 1s ease;
+    animation-fill-mode: both;
+
+}
+.shrink{
+    visibility: visible;
+    animation: shrink 1s, display 1.5s reverse ease-in;
+    animation-fill-mode: both;
+}
+
+@keyframes expand {
+    0%{
+        height: 100%;
+        width: 100%;
+        left: 100%;
+        border-radius: 100%;
+    }
+    100%{
+        height: 100%;
+        width: 100%;
+
+        left: 0%;
+        
+        border-radius: 0;
+    }
+}
+@keyframes shrink{
+    0%{
+        position: absolute;
+
+        height: 100%;
+        width: 100%;
+
+        left: 0%;
+        
+        border-radius: 0;
+
+    }
+    100%{
+        position: absolute;
+
+        height: 100%;
+        width: 100%;
+
+        left: -100%;
+        border-radius: 0px;
+
+    }
+}
+
+@keyframes display {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity: 1;
+    }
+}
+
+.day > *{
+    padding: 0.5em;
+}
+
+.date{
+    background: none;
+}
+
+
+.weatherDescription{
+    display: flex;
+    align-items: center;
+    flex-direction: column;    
+}
+.weatherDescription > *{
+    margin: 0.5em;
+}
+
+.minMax{
+    align-self: flex-end;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5em;
+    margin: 1em;
+}
+
+.forecastData{
+    width: max-content;
+    text-align: center;
+}
+.forecastData > *{
+    padding: 0.5em;
+}
+
+.dayIcon{
+    width: 50%;
+    background: var(--color-light);
+    border-radius: 100%;
+    
+}
+
+/* Grid & Colors */
+
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.mainContainer{
+
+    position: relative;
+    background: white;
+
+    overflow-x: hidden;
+    max-height: 1100px;
+    height: 75vh;
+    width: 500px;
+    max-width: 500px;
+
+    display: grid;
+    grid-template:
+        'input' max-content
+        'country' max-content
+        'weather' minmax(max-content,auto)
+        'forecast' minmax(max-content, 50%)
+        /100%
+    ;
+    align-content:space-between ;
+
+    box-shadow: 0 0 5px 1px #2463AB;
+    transition: all 0.5s;
+}
+
+.inputSection{
+    grid-area: input;
+    background: var(--gradient-dark);
+}
+.currentCountryInfo{
+    grid-area: country;
+    background-color: none;
+}
+#weatherCurrent{
+    grid-area: weather;
+    background-color: none;
+} 
+
+#weatherForecast{
+    grid-area: forecast;
+    display: grid;
+    grid-template:
+        '.   day0   .' max-content
+        'day1 day2 day3' max-content
+        'day4 day5 day6' max-content
+        '.   day7   .' max-content
+        /max-content max-content max-content
+    ;
+
+
+
+    justify-content: space-evenly;
+    align-content: space-around;
+
+}
+
+.dayBtn{      
+    justify-self: center;
+    background-color: whitesmoke;
+
+    height: 100%;
+    width: 100%;  
+
+    padding: 1em;
+
+    background: var(--gradient-dark);
+
+    border: var(--color-mid) 1px solid;
+    border-radius: 10em;
+    box-shadow: 0px 0px 1px 1px var(--color-light);
+
+    /* transform: translate(10px, -7px) */
+    
+    color: hsl(0, 0%, 100%);
+
+    transition: all 0.25s;
+}
+
+.dayBtn:hover{
+    background: var(--gradient-mid);
+    box-shadow: 0px 0px 1px 2px var(--color-light);
+    transition: all 0.25s;
+} 
+
+.dayBtn:active{
+    background:var(--color-mid);
+    transform: translate(0px, 0px); 
+    transition: all 0.25s;
+
+}
+
+.day{
+    z-index: 2;
+    background: var(--gradient-dark);
+}
+.day > *{
+    color: whitesmoke;
+    font-size:xx-large;
+}
+
+:root{
+
+    --gradient-light: linear-gradient(
+        20deg,
+        hsl(204, 100%, 76%),
+        hsl(202, 100%, 80%),
+        hsl(203, 97%, 56%)
+    );
+
+    --gradient-mid: linear-gradient(
+        -145deg,
+        hsl(202, 100%, 80%),
+        hsl(203, 97%, 56%),
+        #2F80DE,
+        #2463AB
+    );
+
+    --gradient-dark: linear-gradient(
+        20deg,
+        hsl(243, 100%, 15%) 10%,
+        hsl(243, 100%, 69%)
+    );
+
+    --color-light:hsl(203, 59%, 76%);
+    --color-mid:hsl(219, 79%, 66%);
+
+}
+
+/* Queries */
+
+@media (max-width:501px),(max-height: 700px) {
+    .mainContainer{
+        min-height: 100vh;
+        transition: all 0.5s;
+    }
+}
+
+@media (orientation: landscape) and (max-width: 700px){
+    .mainContainer{
+        min-width: 100%;
+        
+        display: grid;
+        grid-template:
+            'input input' max-content
+            'country forecast' max-content
+            'weather forecast' minmax(max-content,auto)
+            '. .' minmax(max-content,auto)
+            /1fr 1fr
+        ;
+        align-content: space-between ;
+    }
+
+    #weatherForecast .dayBtn{
+        padding: 0.5em;
+    }
+
+    .day{
+        max-width: 100vw;
+    }
+
+    .day > *{
+        padding: 0;
+    }
+
+    @keyframes expand {
+        0%{
+            height: 100%;
+            width: 100%;
+            
+            opacity: 0;
+            left: 100%;
+
+            border-radius: 0%;
+        }
+        100%{
+            height: 100%;
+            width: 100%;
+    
+            left: 0%;
+            
+            border-radius: 0;
+        }
+    }
+    @keyframes shrink{
+        0%{
+            position: absolute;
+    
+            height: 100%;
+            width: 100%;
+    
+            left: 0%;
+            
+            border-radius: 0;
+    
+        }
+        100%{
+            position: absolute;
+    
+            height: 100%;
+            width: 100%;
+    
+            left: -100%;
+            border-radius: 0px;
+    
+        }
+    }
+
+}
+	  </script>
+	  
+</head>
+
+<body>
+	
+	<header class="header-area">
+		<!--header-top-->
+	  	<div class="header-top d-none d-sm-block">
+	  		<div class="container">
+	  			<div class="row align-items-center">
+	  				<div class="col-sm-9">
+	  					<div class="contact-info">
+	  						<ul>
+	  							<li><i class="fa fa-phone"></i>(+91) 9261 435 768 <span>|</span></li>
+	  							<li><i class="fa fa-home"></i>303 Ganesh Meridian,A'BAD <span>|</span></li>
+	  							<li><i class="fa fa-time"></i>Monday - Saturday: 7.AM - 5.PM</li>
+	  						</ul>
+	  					</div>
+	  				</div>
+	  				<div class="col-sm-3">
+						<div class="social-icons pull-right">
+							<a href="https://www.facebook.com/growmoree101"><i class="fa fa-facebook"></i></a>
+							<a href="https://app.slack.com/client/T02VBAH9UQ7/D0305AECSES"><i class="fa fa-slack"></i></a>
+							<a href="https://www.instagram.com/growmoree101/"><i class="fa fa-instagram"></i></a>
+						</div>
+					</div>
+	  			</div>
+	  		</div>
+	  	</div>
+		<!--header-bottom-->
+		<div id="sticker" class="header-bottom">
+			<div class="container-fluid">
+				<div class="row align-items-center">
+					<div class="col-sm-2">
+						<div class="logo">
+							<a href="/"><img src="{% static 'images/logowbg.png' %}" alt="logo"></a>
+						</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="mainmenu text-center">
+							<nav>
+								<ul>
+									<li><a href="/">Home</a></li>
+									<li><a href="/crop_rec">RECOMMEND</a></li>
+									<li><a href="#">Insights</a>
+										<ul class="submenu">
+											<li><a href="/about">About Us</a></li>
+											<li><a href="/coming_soon">Coming Soon</a></li> 
+										</ul>
+									</li>
+									<li><a href="/faq">FAQs</a></li>
+									<li><a href="/blog">Blog</a>
+									</li>
+									<li><a href="/plants">Plants</a></li>
+									<li><a href="/contact">Contact Us</a></li>
+									<li><a href="/login">LOGIN/SIGNUP</a></li>									
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+  	</header>
+
+	<!--coming-area start-->
+	<div class="coming-soon-area" style="background-image: url('{% static "images/bg/coming-soon.jpg"%}'); height:500px;">
+		<div class="display-table">
+			<div class="vertical-middle">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-8 offset-lg-2">
+							<div class="coming-soon-msg text-center">
+								<div class="logo mb-20">
+									<img src="{% static 'images/logowbg.png' %}" alt="GrowMore">
+								</div>
+								<h2>Coming soon...</h2>
+								<h2>Weather Forecasting</h2>
+								<div class="coming-countdown style-1 text-center mt-50">
+									<div data-countdown="2022/05/07">
+										<span class="cdown days">
+											<span class="time-count"></span>
+											<p>Days</p>
+										</span>
+										<span class="cdown hour">
+											<span class="time-count"></span> 
+											<p>Hour</p>
+										</span> 
+										<span class="cdown minutes">
+											<span class="time-count"></span> 
+											<p>Min</p>
+										</span> 
+										<span class="cdown second"> 
+											<span class="time-count"></span> 
+											<p>Sec</p>
+										</span>
+									</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+
+					<!--weather value start-->
+					<div class="mainContainer">
+
+						<section class="inputSection">   
+						  <div class="searchBar">
+							<div> Enter City Name = 
+							<input class='inputField' id="userInputField" type="text">
+							<button class="unitsBtn metric clickable" id="unitsBtn">°C</button>
+							<button class="inputBtn metric clickable" id="userInputBtn" type="button">Go</button>
+						  </div>
+						  </div>     
+						  <ul id="suggestions" class="hidden suggestions"></ul>
+						</section>
+					  
+					  
+						<section class="currentCountryInfo">
+						 
+						  <p class="location">
+							<span id="name"></span>
+							<span id="country"></span> 
+						  </p>
+						  <p class="coordinates">
+							<span id="lat"></span>
+							<span id="lon"></span>
+						  </p>
+						</section>
+					  
+					  
+						<section id="weatherCurrent">
+						  <div class="currentMain">
+							<span id="temp"></span>
+					  
+							<span class='weatherDescription' id="description"></span>
+						  </div>
+						  <div class="currentData">
+							<p> <span id="feels_like"></span></p>
+							<p>     <span id="visibility"></span></p>
+							<p>       <span id="humidity"></span></p>    
+						  </div>
+						</section>
+					  
+					  
+						<section id="weatherForecast"></section>
+					  
+					  </div>
+						  <!-- Optional JavaScript; choose one of the two! -->
+					  <script>
+					  console.log('-- script: Starting');
+					  
+					  const apiKey = 'cb8c7a9fae36fb84f17d0b6074bf16b2';
+					  let units = 'metric';
+					  let unitLetter = '°C';
+					  let lastLon = 0;
+					  let lastLat = 0;
+					  
+					  // Function to console.log specifying the parent function name.
+					  function fLog(message, arg1 = ''){
+						  // arguments.callee.caller.name is deprecated, use with caution
+						  let fName = fLog.caller.name;
+						  console.log(`-+ ${fName}(): ${message}`, arg1);
+						  console.log('');
+					  }
+					  
+					  // Docs: https://openweathermap.org/current
+					  // Can call current weather data for one location
+					  // By: city name, city ID, ZIP code, geographic coordinates
+					  const weather={
+					  
+						  html:{
+							  name: document.getElementById('name'),
+							  main: document.getElementById('main'),
+							  description: document.getElementById('description'),
+							  visibility: document.getElementById('visibility'),
+							  temp: document.getElementById('temp'),
+							  feels_like: document.getElementById('feels_like'),
+							  humidity: document.getElementById('humidity'),
+							  lat: document.getElementById('lat'),
+							  lon: document.getElementById('lon'),
+							  icon: document.getElementById('icon')
+						  },
+					  
+						  getCurrent: async function (input, lat='', lon='', inputType='byName'){
+							  fLog('Starting');
+							  
+							  try {
+					  
+								  let fetcher;
+								  if(inputType === 'byName'){
+									  fetcher = await fetch(`https://api.openweathermap.org/data/2.5/weather?q=${input}&units=${units}&appid=${apiKey}`);
+								  }
+								  else if(inputType === 'byCoord'){
+									  fetcher = await fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&units=${units}&appid=${apiKey}`);
+								  }
+								  
+								  if(fetcher.ok === true){
+									  const weatherJson = await fetcher.json();
+									  fLog('Fetch done, Json created.');
+					  
+									  // Display info
+									  this.showCurrent(weatherJson);
+									  if(inputType === 'byName'){
+										  weather.getForecast(weatherJson.coord.lat, weatherJson.coord.lon);
+									  }
+					  
+									  lastLat = weatherJson.coord.lat;
+									  lastLon = weatherJson.coord.lon;
+								  }
+								  else{
+									  // to do: catch errors
+								  }
+					  
+					  
+							  } catch (error) {
+								  fLog('Error found = ', error);
+							  }
+					  
+							  document.getElementById('weatherCurrent').style.visibility = 'visible';
+					  
+					  
+							  fLog('Ending');
+						  },
+					  
+						  showCurrent: function(weatherJson){
+							  // shorthand
+							  let tag = this.html;
+					  
+							  tag.name.innerText = weatherJson.name+', ';
+							  tag.description.innerText = weatherJson.weather[0].description;
+							  tag.visibility.innerText = 'Visibility: '+(weatherJson.visibility)/1000+'Km';
+							  tag.temp.innerText = weatherJson.main.temp+unitLetter;
+							  tag.feels_like.innerText = 'Feels Like: '+weatherJson.main.feels_like+unitLetter;
+							  tag.humidity.innerText = 'Humidity: '+weatherJson.main.humidity+'%';
+							  tag.lat.innerText = weatherJson.coord.lat+', ';
+							  tag.lon.innerText = weatherJson.coord.lon;
+							  
+							  let iconId = weatherJson.weather[0].icon;
+							  tag.icon.src =`https://openweathermap.org/img/wn/${iconId}@4x.png`;
+							  tag.icon.style.visibility = 'visible';
+							  
+							  geoLocation.showInfo(weatherJson.sys.country);
+							  
+							  fLog('Info displayed');
+						  },
+					  
+						  //https://api.openweathermap.org/data/2.5/onecall?lat={lat}&lon={lon}&exclude={part}&appid={API key}
+						  getForecast: async function( lat, lon){
+					  
+							  fLog('Starting');
+							  
+							  try {
+					  
+								  let fetcher = await fetch(`https://api.openweathermap.org/data/2.5/onecall?lat=${lat}&lon=${lon}&exclude='current,minutely,hourly,alerts'&units=${units}&appid=${apiKey}`);
+								  
+								  if(fetcher.ok === true){
+									  const forecastJson = await fetcher.json();
+									  fLog('Fetch done, Json created.');
+									  fLog('forecastJson = ', forecastJson);
+					  
+									  this.clearforecast();
+									  for (let index = 0; index < forecastJson.daily.length; index++) {
+										  this.showForecast(forecastJson.daily[index], index);      
+									  }
+					  
+								  }
+								  else{
+									  // to do: catch errors
+								  }
+					  
+					  
+							  } catch (error) {
+								  fLog('Error found = ', error);
+							  }
+					  
+							  fLog('Ending');
+						  },
+					  
+						  showForecast: function(nDayForecast, nDay){
+					  
+							  let section = document.getElementById('weatherForecast');
+							  
+							  let newDiv = document.createElement('div');
+							  let newDivBtn = document.createElement('div');
+					  
+							  let day;
+							  if(nDay === 0){
+								  day = 'Today'
+							  }
+							  else{
+								  day = '+'+(nDay * 24)+'hs';
+							  }
+					  
+							  let rain;
+							  if(nDayForecast.rain){
+								  rain = nDayForecast.rain+'mm';
+							  }
+							  else{
+								  rain = 'no data';
+							  }
+					  
+							  newDiv.classList.add('day', 'clickable');
+							  newDivBtn.classList.add(`day${nDay}`, 'dayBtn', 'clickable');
+					  
+					  
+							  newDiv.innerHTML = `
+							  
+								  <p class="date">${day}</p>
+					  
+								  <div class="forecastMain">
+									  <p class="weatherDescription">
+										  
+										  ${nDayForecast.weather[0].description}
+									  </p>
+									  
+									  <div class="minMax">
+										  <p>Min - Max</p>
+										  <p>${nDayForecast.temp.min} / ${nDayForecast.temp.max} ${unitLetter}</p>
+									  </div>
+								  </div>
+								  
+								  <div class="forecastData">
+									  <p>Precipitation ${((nDayForecast.pop)*100).toFixed(0)}%</p>
+									  <p>Rain ${rain}</p>
+									  <p>Humidity ${nDayForecast.humidity}%</p>
+									  <p>Cloudiness ${nDayForecast.clouds}%</p>
+								  </div>
+					  
+							  `;
+					  
+							  newDivBtn.innerHTML = `<p>${day}</p>`
+					  
+							  section.appendChild(newDiv);
+							  section.appendChild(newDivBtn);
+							  
+							  newDivBtn.addEventListener('click',()=>{
+								  newDiv.classList.toggle('expand')
+								  newDiv.classList.toggle('shrink')
+								  if(newDiv.classList.contains('shrink')){
+									  newDiv.classList.toggle('shrink')
+								  }
+							  });
+							  
+							  newDiv.addEventListener('click',()=>{
+								  if(newDiv.classList.contains('expand')){
+									  newDiv.classList.toggle('expand')
+								  }
+								  newDiv.classList.toggle('shrink')
+							  });
+					  
+						  },
+					  
+						  clearforecast: function(){
+							  let section = document.getElementById('weatherForecast');
+							  section.innerHTML = '';
+						  }
+						  
+					  }
+					  
+					  
+					  const geoLocation={
+					  
+						  html:{
+							  flag: document.getElementById('flag'),
+							  country: document.getElementById('country'),
+							  suggestions: document.getElementById('suggestions')
+						  },
+					  
+						  // https://restcountries.eu/rest/v2/alpha/ country code
+						  showInfo: async function(code){
+					  
+							  // let fetcher = await fetch(`https://restcountries.eu/rest/v2/alpha/${code}`);
+							  // let countryJson = await fetcher.json();
+							  // fLog('countryjson = ', countryJson);
+					  
+							  let fetcher = await fetch(`https://restcountries.eu/rest/v2/alpha/${code}?fields=flag;name`);
+							  let countryJson = await fetcher.json();
+					  
+							  this.html.country.innerText = countryJson.name;
+							  this.html.flag.src = countryJson.flag;
+							  this.html.flag.style.visibility = 'visible';
+							  
+						  },  
+						  
+						  // https://openweathermap.org/api/geocoding-api
+						  getSuggestions: async function(input){
+					  
+							  if(isNaN(input)){
+								  // variable = input.toLowerCase();
+								  let fetcher = await fetch(`https://api.openweathermap.org/geo/1.0/direct?q=${input}&limit=10&appid=${apiKey}`);
+								  
+								  let suggestionsJson = await fetcher.json();
+								   
+								  if( (typeof suggestionsJson[0]) !== 'undefined'){
+									  
+									  fLog('TRUE suggestionsJson = ', suggestionsJson); 
+									  this.clearSuggestions();
+									  
+									  suggestionsJson.forEach(element => {
+										  this.showSuggestion(element);      
+									  });
+					  
+								  }
+								  else{
+									  fLog('FALSE suggestionsJson = ', suggestionsJson);                
+								  }
+								  
+							  }else{
+								  // search by coordinates
+								//  let fetcher = await fetch()
+					  
+							  }
+					  
+						  },
+					  
+						  showSuggestion: async function(suggestion){
+							  fLog('starting');
+					  
+							  let fetcher = await fetch(`https://restcountries.eu/rest/v2/alpha/${suggestion.country}?fields=flag;name`);
+							  let flagJson = await fetcher.json();
+							  let newImg = document.createElement('img');
+							  newImg.src = flagJson.flag;
+					  
+							  let suggestionsUl = this.html.suggestions;
+							  let newListItem = document.createElement('li');    
+					  
+					  
+							  newListItem.classList.add('clickable');
+							  newListItem.addEventListener('click', ()=>{
+								  weather.getCurrent('',suggestion.lat,suggestion.lon, 'byCoord');
+								  weather.getForecast(suggestion.lat, suggestion.lon);
+							  });
+					  
+							  if(suggestion.country === 'US'){
+								  newListItem.innerHTML = `
+									  <div>
+										  <p>
+											  ${suggestion.name}, ${suggestion.state}. 
+										  </p>    
+										  <p>
+											  ${suggestion.lat}, ${suggestion.lon}.
+										  </p>    
+									  </div>
+								  `;
+							  }else{
+								  newListItem.innerHTML = `
+									  <div>
+										  <p>
+											  ${suggestion.name}, ${suggestion.country}. 
+										  </p>    
+										  <p>
+											  ${suggestion.lat}, ${suggestion.lon}.
+										  </p>    
+									  </div>
+								  `;
+							  }
+							  
+							  newListItem.insertBefore(newImg, newListItem.firstChild);
+							  suggestionsUl.insertBefore(newListItem, suggestionsUl.firstChild);
+					  
+						  },
+					  
+						  clearSuggestions: function(){
+							  // check if suggestion is inside string 
+							  // whit string.includes(searchvalue, start)
+							  //and delete if not
+					  
+							  this.html.suggestions.innerHTML = '';
+					  
+						  }
+					  
+					  }
+					  
+					  // User Input
+					  function submitUserInput(userInput){
+						  weather.getCurrent(userInput.value);
+						  userInput.value = '';
+						  geoLocation.clearSuggestions();
+					  }
+					  
+					  
+					  /* ---- Main ---- */
+					  
+					  const userInputField = document.getElementById('userInputField');
+					  const userInputBtn = document.getElementById('userInputBtn');
+					  const unitsBtn = document.getElementById('unitsBtn');
+					  
+					  userInputBtn.addEventListener('click', ()=>{
+						  submitUserInput(userInputField);
+					  });
+					  
+					  userInputField.addEventListener('keydown', (e)=>{
+						  if(e.key == 'Enter'){submitUserInput(userInputField);}
+					  });
+					  
+					  {   
+						  // This piece of code has the purpose of fetching location suggestions
+						  // every [interval] ms, only when the input field is on focus, with new text.
+						  
+						  const suggestions = document.getElementById('suggestions');
+					  
+						  let inverval = 500; //ms
+						  let lastInput = '';
+						  let suggestionInterval;
+						  
+						  userInputField.addEventListener('focusin', ()=>{
+							  
+							  suggestionInterval = setInterval(()=>{
+					  
+								  if(userInputField.value !== '' && userInputField.value !== lastInput){
+									  lastInput = userInputField.value;
+									  geoLocation.getSuggestions(userInputField.value);
+								  }
+								  else if(userInputField.value === ''){
+									  geoLocation.clearSuggestions();
+								  }
+								  else{
+									  console.log('-- Interval in effect');
+								  }
+					  
+							  }, inverval);
+					  
+							  suggestions.classList.toggle('hidden');
+							  
+						  });
+						  
+						  userInputField.addEventListener('focusout', ()=>{
+							  clearInterval(suggestionInterval);
+							  console.log('-- Interval Ended');
+							  setTimeout(()=>{
+								  suggestions.classList.toggle('hidden');
+							  },250);
+						  });
+					  }
+					  
+					  unitsBtn.addEventListener('click', ()=>{
+					  
+						  unitsBtn.classList.toggle('imperial');
+						  userInputBtn.classList.toggle('imperial');
+						  unitsBtn.classList.toggle('metric');
+						  userInputBtn.classList.toggle('metric');
+						  
+						  if(units === 'metric'){
+							  units = 'imperial';
+							  unitLetter= '°F';
+							  unitsBtn.innerText = '°F';
+						  }else{
+							  units = 'metric'
+							  unitLetter= '°C';
+							  unitsBtn.innerText = '°C';
+						  }
+					  
+						  if((lastLat !== 0) && (lastLon !== 0)){
+							  weather.getCurrent('',lastLat,lastLon,'byCoord');
+							  weather.getForecast(lastLat,lastLon);
+						  }
+					  
+					  });
+					  
+					  </script>
+						  <!-- Option 1: Bootstrap Bundle with Popper -->
+						  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+					  
+						  <!-- Option 2: Separate Popper and Bootstrap JS -->
+						  <!--
+						  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+						  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+						  -->
+
+					<!--weather value end-->
+
+
+
+					<div class="row mt-105 sm-mt-70" style ="background-image: url('{% static "images//bg/subscribe-2.jpg" %}'); height: 350px;" >
+						<div class="col-lg-6 offset-lg-3">
+							<div class="subscribe-form style-2">
+								<h3>Enter Your Email</h3>
+								<p>Enter your mail to get latest weather insights right to your mail.</p>
+								<input type="email" placeholder="Your Email" />
+								<button class="btn-common">Subscribe</button>
+							</div>
+						</div>
+					</div>
+					<hr style="border-style: groove;">
+					<div class="footer-copyright">
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-12">
+									<p><a href="https://github.com/Jeetshah18/GrowMore">
+										<em><b> &copy;</b> All copyrights reserved by G29-GrowMore team</em></a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+	</div>
+	<!--coming-area end-->
+
+<!-- modernizr js -->
+	<script src="{% static 'js/vendor/modernizr-3.6.0.min.js' %}"></script>
+	<!-- jquery-1.12.0 version -->
+	<script src="{% static 'js/vendor/jquery-1.12.0.min.js' %}"></script>
+	<!-- bootstra.min js -->
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<!-- meanmenu js -->
+	<script src="{% static 'js/jquery.meanmenu.min.js' %}"></script>
+	<!-- easing js -->
+	<script src="{% static 'js/jquery.easing.min.js' %}"></script>
+	<!---venobox-js-->
+	<script src="{% static 'js/venobox.min.js' %}"></script>
+	<!---slick-js-->
+	<script src="{% static 'js/slick.min.js' %}"></script>
+	<!---waypoints-js-->
+	<script src="{% static 'js/waypoints.js' %}"></script>
+	<!---counterup-js-->
+	<script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+	<!---isotop-js-->
+	<script src="{% static 'js/isotope.pkgd.min.j' %}"></script>
+	<!-- jquery-ui js -->
+	<script src="{% static 'js/jquery-ui.min.js' %}"></script>
+	<!-- jquery.countdown js -->
+	<script src="{% static 'js/jquery.countdown.min.js' %}"></script>
+	<!-- plugins js -->
+	<script src="{% static 'js/plugins.js' %}"></script>
+	<!-- main js -->
+	<script src="{% static 'js/main.js' %}"></script>
+  
+</body>
+
+</html>

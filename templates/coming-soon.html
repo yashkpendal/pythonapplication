@@ -1,0 +1,224 @@
+{% load static %} 
+
+<!doctype html>
+<html class="no-js" lang="zxx">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="x-ua-compatible" content="ie=edge">
+	<title>GrowMore - Coming Soon</title>
+	<meta name="description" content="Coming soon...">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="manifest" href="site.html">
+	<link rel="apple-touch-icon" href="icon.html">
+	<!-- Place favicon.ico in the root directory -->
+<!-- bootstrap v4.0.0 -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/bootstrap.min.css">
+	<!-- fontawesome-icons css -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/font-awesome.min.css">
+	<!-- themify-icons css -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/themify-icons.css">
+	<!-- elegant css -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/elegant.css">
+	<!-- meanmenu css -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/meanmenu.min.css">
+	<!-- animate css -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/animate.css">
+	<!-- venobox css -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/venobox.css">
+	<!-- jquery-ui.min css -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/jquery-ui.min.css">
+	<!-- slick css -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/slick.css">
+	<!-- slick-theme css -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/slick-theme.css">
+	<!-- helper css -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/helper.css">
+	<!-- style css -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/style.css">
+	<!-- responsive css -->
+	<link rel="stylesheet" href="{{ STATIC_URL }}/static/css/responsive.css">
+
+
+	<script>
+		window.watsonAssistantChatOptions = {
+			integrationID: "7cee22ef-ef06-4aab-9ca6-6202f2ab1d62", // The ID of this integration.
+			region: "eu-gb", // The region your integration is hosted in.
+			serviceInstanceID: "a872e461-2820-42ca-9ae9-904e227f7a30", // The ID of your service instance.
+			onLoad: function(instance) { 
+				instance.updateCSSVariables({
+        		'BASE-font-family': '"Roboto Slab", cursive,"Bellota", serif',
+       			'$active-primary': '#795548',
+        		'$focus': '#00FF99',
+        		'$hover-primary': '#795548',
+        		'$interactive-01': '#8bc052'
+      			});
+				instance.render(); }
+		  };
+		setTimeout(function(){
+		  const t=document.createElement('script');
+		  t.src="https://web-chat.global.assistant.watson.appdomain.cloud/versions/" + (window.watsonAssistantChatOptions.clientVersion || 'latest') + "/WatsonAssistantChatEntry.js"
+		  document.head.appendChild(t);
+		});
+	  </script>
+	  
+</head>
+
+<body>
+	
+	<header class="header-area">
+		<!--header-top-->
+	  	<div class="header-top d-none d-sm-block">
+	  		<div class="container">
+	  			<div class="row align-items-center">
+	  				<div class="col-sm-9">
+	  					<div class="contact-info">
+	  						<ul>
+	  							<li><i class="fa fa-phone"></i>(+91) 9261 435 768 <span>|</span></li>
+	  							<li><i class="fa fa-home"></i>303 Ganesh Meridian,A'BAD <span>|</span></li>
+	  							<li><i class="fa fa-time"></i>Monday - Saturday: 7.AM - 5.PM</li>
+	  						</ul>
+	  					</div>
+	  				</div>
+	  				<div class="col-sm-3">
+						<div class="social-icons pull-right">
+							<a href="https://www.facebook.com/growmoree101"><i class="fa fa-facebook"></i></a>
+							<a href="https://app.slack.com/client/T02VBAH9UQ7/D0305AECSES"><i class="fa fa-slack"></i></a>
+							<a href="https://www.instagram.com/growmoree101/"><i class="fa fa-instagram"></i></a>
+						</div>
+					</div>
+	  			</div>
+	  		</div>
+	  	</div>
+		<!--header-bottom-->
+		<div id="sticker" class="header-bottom">
+			<div class="container-fluid">
+				<div class="row align-items-center">
+					<div class="col-sm-2">
+						<div class="logo">
+							<a href="/"><img src="{% static 'images/logowbg.png' %}" alt="logo"></a>
+						</div>
+					</div>
+					<div class="col-sm-8">
+						<div class="mainmenu text-center">
+							<nav>
+								<ul>
+									<li><a href="/">Home</a></li>
+									<li><a href="/crop_rec">RECOMMEND</a></li>
+									<li><a href="#">Insights</a>
+										<ul class="submenu">
+											<li><a href="/about">About Us</a></li>
+											<li><a href="/coming_soon">Coming Soon</a></li> 
+										</ul>
+									</li>
+									<li><a href="/faq">FAQs</a></li>
+									<li><a href="/blog">Blog</a>
+									</li>
+									<li><a href="/plants">Plants</a></li>
+									<li><a href="/contact">Contact Us</a></li>
+									<li><a href="/login">LOGIN/SIGNUP</a></li>									
+								</ul>
+							</nav>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+  	</header>
+
+	<!--coming-area start-->
+	<div class="coming-soon-area" style="background-image: url('{% static "images/bg/coming-soon.jpg"%}'); height:500px;">
+		<div class="display-table">
+			<div class="vertical-middle">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-8 offset-lg-2">
+							<div class="coming-soon-msg text-center">
+								<div class="logo mb-20">
+									<img src="{% static 'images/logowbg.png' %}" alt="GrowMore">
+								</div>
+								<h2>Coming soon...</h2>
+								<h2>Weather Forecasting</h2>
+								<div class="coming-countdown style-1 text-center mt-50">
+									<div data-countdown="2022/04/16">
+										<span class="cdown days">65
+											<span class="time-count"></span>
+											<p>Days</p>
+										</span>
+										<span class="cdown hour">
+											<span class="time-count"></span> 
+											<p>Hour</p>
+										</span> 
+										<span class="cdown minutes">
+											<span class="time-count"></span> 
+											<p>Min</p>
+										</span> 
+										<span class="cdown second"> 
+											<span class="time-count"></span> 
+											<p>Sec</p>
+										</span>
+									</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="row mt-105 sm-mt-70" style ="background-image: url('{% static "images//bg/subscribe-2.jpg" %}'); height: 350px;" >
+						<div class="col-lg-6 offset-lg-3">
+							<div class="subscribe-form style-2">
+								<h3>Enter Your Email</h3>
+								<p>Enter your mail to get latest weather insights right to your mail.</p>
+								<input type="email" placeholder="Your Email" />
+								<button class="btn-common">Subscribe</button>
+							</div>
+						</div>
+					</div>
+					<hr style="border-style: groove;">
+					<div class="footer-copyright">
+						<div class="container">
+							<div class="row">
+								<div class="col-sm-12">
+									<p><a href="https://github.com/Jeetshah18/GrowMore">
+										<em><b> &copy;</b> All copyrights reserved by G29-GrowMore team</em></a></p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+		</div>
+	</div>
+	<!--coming-area end-->
+
+<!-- modernizr js -->
+	<script src="{% static 'js/vendor/modernizr-3.6.0.min.js' %}"></script>
+	<!-- jquery-1.12.0 version -->
+	<script src="{% static 'js/vendor/jquery-1.12.0.min.js' %}"></script>
+	<!-- bootstra.min js -->
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<!-- meanmenu js -->
+	<script src="{% static 'js/jquery.meanmenu.min.js' %}"></script>
+	<!-- easing js -->
+	<script src="{% static 'js/jquery.easing.min.js' %}"></script>
+	<!---venobox-js-->
+	<script src="{% static 'js/venobox.min.js' %}"></script>
+	<!---slick-js-->
+	<script src="{% static 'js/slick.min.js' %}"></script>
+	<!---waypoints-js-->
+	<script src="{% static 'js/waypoints.js' %}"></script>
+	<!---counterup-js-->
+	<script src="{% static 'js/jquery.counterup.min.js' %}"></script>
+	<!---isotop-js-->
+	<script src="{% static 'js/isotope.pkgd.min.j' %}"></script>
+	<!-- jquery-ui js -->
+	<script src="{% static 'js/jquery-ui.min.js' %}"></script>
+	<!-- jquery.countdown js -->
+	<script src="{% static 'js/jquery.countdown.min.js' %}"></script>
+	<!-- plugins js -->
+	<script src="{% static 'js/plugins.js' %}"></script>
+	<!-- main js -->
+	<script src="{% static 'js/main.js' %}"></script>
+  
+</body>
+
+</html>
